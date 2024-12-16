@@ -1,49 +1,30 @@
+// import 'package:flutter/widgets.dart';
 import 'package:flutter/material.dart';
-import 'widgets/counter_widget.dart';
-import 'widgets/info_cards.dart';
+// import 'package:flutter/cupertino.dart';
 
-void main() {
-  runApp(const MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'First Flutter App',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-        useMaterial3: true,
-      ),
-      home: const HomePage(),
-    );
-  }
+void main(){
+  // WidgetsApp // MaterialApp // CupertinoApp
+  runApp(MaterialApp(
+    home: HomePage(),
+    theme: ThemeData(
+      primarySwatch: Colors.blue,
+    ),
+  ));
 }
 
 class HomePage extends StatelessWidget {
-  const HomePage({super.key});
-
   @override
   Widget build(BuildContext context) {
+    // return Container(
+    //   color: Colors.purple,
+    //   child: Text("Hi Flutter"),
+    // );
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Home Page'),
+        title: Text("At the Top of the application"),
       ),
-      body: const Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            // Using our custom widgets
-            InfoCard(
-              title: 'Welcome',
-              description: 'This is a sample card',
-            ),
-            SizedBox(height: 20), // Adds some spacing
-            CounterWidget(),
-          ],
-        ),
+      body: Container(
+        child: Text("At the body of the application"),
       ),
     );
   }
