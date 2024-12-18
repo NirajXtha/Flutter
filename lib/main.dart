@@ -23,37 +23,58 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         title: Text("At the Top of the application"),
       ),
-      body: Container(
-        color: Colors.teal,
-        height: 200,
-      child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: <Widget>[
-            Container(
-              padding: const EdgeInsets.all(8.0),
-              color: Colors.red,
-              width: 100,
-              height: 100,
-              alignment: Alignment.center,
-              ),
-              Container(
-              padding: const EdgeInsets.all(8.0),
-              color: Colors.purple,
-              width: 100,
-              height: 100,
-              alignment: Alignment.center,
-            ),
-            Container(
-              padding: const EdgeInsets.all(8.0),
-              color: Colors.blue,
-              width: 100,
-              height: 100,
-              alignment: Alignment.center,
-            ),
-          ],
+      body: Center(
+        child: Container(
+          color: Colors.teal,
+          height: 100,
+          width: 100,
         ),
       ),
+      drawer: Drawer(
+          // key: Key("Drawer"),
+          child: ListView(
+            padding: const EdgeInsets.all(0),
+            children: <Widget>[
+              // DrawerHeader(
+              //   child: Text("Drawer Header"),
+              //   decoration: BoxDecoration(color: Colors.blue),
+              // ),
+              UserAccountsDrawerHeader(
+                accountName: Text("Niraj Shrestha"), 
+                accountEmail: Text("nishrestha776@gmal.com"),
+                // currentAccountPicture: Image.file()
+                // currentAccountPicture: Image.network("https://iili.io/Jj884Eu.jpg")
+                currentAccountPicture: CircleAvatar(
+                  backgroundImage: NetworkImage("https://iili.io/Jj884Eu.jpg"),),
+              ),
+              ListTile(
+                leading: Icon(Icons.home),
+                title: Text("Home"),
+                subtitle: Text("SubTitle"),
+                trailing: Icon(Icons.edit),
+                onTap: () {} ,
+              ),
+              ListTile(
+              leading: Icon(Icons.person),
+              title: Text("Home"),
+              subtitle: Text("SubTitle"),
+              trailing: Icon(Icons.edit),
+            ),
+            ListTile(
+              leading: Icon(Icons.email),
+              title: Text("Home"),
+              subtitle: Text("SubTitle"),
+              trailing: Icon(Icons.edit),
+            ),
+            ],
+          ),
+        ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        child: Icon(Icons.edit),
+        // mini: true, // to make the icon smaller
+      ),
+      // floatingActionButtonLocation: FloatingActionButtonLocation.startTop, // to move the button to the top or wherever u want
     );
   }
 }
