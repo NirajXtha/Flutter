@@ -19,21 +19,21 @@ class NameCardWidget extends StatelessWidget {
           height: 500,
           // fit: BoxFit.cover,
         ),
-        SizedBox(
+        const SizedBox(
           height: 20,
         ),
         Text(
           myText,
-          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+          style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
         ),
-        SizedBox(
+        const SizedBox(
           height: 20,
         ),
         Padding(
           padding: const EdgeInsets.all(16.0),
           child: TextField(
               controller: _nameController,
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                 border: OutlineInputBorder(),
                 hintText: "Enter your name",
                 labelText: "Name",

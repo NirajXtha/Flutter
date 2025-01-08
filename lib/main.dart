@@ -5,7 +5,7 @@ import 'package:test_app/screens/home_screen.dart';
 
 void main(){
   // WidgetsApp // MaterialApp // CupertinoApp
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
