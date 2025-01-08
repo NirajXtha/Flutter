@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:test_app/screens/drawer.dart';
 import 'package:http/http.dart' as http;
-import 'dart:convert'; // to decode json
+import 'package:test_app/screens/login_screen.dart';
+import 'dart:convert';
+
+import 'package:test_app/utils/constants.dart'; // to decode json
 
 class HomePage extends StatefulWidget {
+  static const routeName = "/home";
   const HomePage({super.key});
 
   @override
@@ -44,6 +48,15 @@ class _HomePageState extends State<HomePage> {
       backgroundColor: Colors.grey[200],
       appBar: AppBar(
         title: const Text("At the Top of the application"),
+        actions: [
+          IconButton(
+            onPressed: () {
+              Constants.prefs.setBool("loggedIn", false);
+              Navigator.pushReplacementNamed(context, LoginScreen.routeName);
+            }, 
+            icon: const Icon(Icons.logout),
+          ),
+        ],
       ),
       body: data != null 
       ? ListView.builder(

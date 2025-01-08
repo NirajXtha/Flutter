@@ -15,8 +15,8 @@ class MyDrawer extends StatelessWidget {
               //   decoration: BoxDecoration(color: Colors.blue),
               // ),
               const UserAccountsDrawerHeader(
-                accountName: Text("Niraj Shrestha"), 
-                accountEmail: Text("nishrestha776@gmal.com"),
+                accountName: Text("Username"), 
+                accountEmail: Text("username@gmal.com"),
                 // currentAccountPicture: Image.file()
                 // currentAccountPicture: Image.network("https://iili.io/Jj884Eu.jpg")
                 currentAccountPicture: CircleAvatar(
